@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-deleGATE — Event Log</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">e-deleGATE</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item active">
+          <span class="nav-icon">📋</span>
+          <span>Event Log</span>
+        </a>
+        <a href="event-types.html" class="nav-item">
+          <span class="nav-icon">⚙️</span>
+          <span>Event Types</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <!-- Summary bar -->
+      <header class="summary-bar">
+        <div class="summary-card">
+          <div class="summary-label">Events (24h)</div>
+          <div class="summary-value">1,247</div>
+          <div class="summary-trend up">↑ 12%</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-label">Event Types Active</div>
+          <div class="summary-value">14</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-label">Unique Actors (24h)</div>
+          <div class="summary-value">89</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-label">Top Event</div>
+          <div class="summary-value summary-value-sm">speakers.inscription.created</div>
+          <div class="summary-trend neutral">342 events</div>
+        </div>
+      </header>
+
+      <!-- Filters -->
+      <div class="filters">
+        <div class="filter-group">
+          <label>Event Type</label>
+          <select id="filter-type">
+            <option value="">All types</option>
+            <option value="speakers.inscription.created">speakers.inscription.created</option>
+            <option value="speakers.inscription.withdrawn">speakers.inscription.withdrawn</option>
+            <option value="document.submitted">document.submitted</option>
+            <option value="credential.verified">credential.verified</option>
+            <option value="session.opened">session.opened</option>
+            <option value="session.closed">session.closed</option>
+            <option value="vote.cast">vote.cast</option>
+            <option value="notification.sent">notification.sent</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Actor</label>
+          <input type="text" id="filter-actor" placeholder="Search by actor...">
+        </div>
+        <div class="filter-group">
+          <label>Date Range</label>
+          <select id="filter-date">
+            <option>Last 24 hours</option>
+            <option>Last 7 days</option>
+            <option>Last 30 days</option>
+            <option>Custom range</option>
+          </select>
+        </div>
+        <button class="filter-btn">Apply</button>
+        <button class="filter-btn-clear">Clear</button>
+      </div>
+
+      <!-- Event list -->
+      <div class="event-list" id="event-list">
+        <!-- Events rendered by JS -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Slide-out detail panel -->
+  <div class="detail-panel" id="detail-panel">
+    <div class="detail-panel-inner">
+      <button class="detail-close" id="detail-close">✕</button>
+      <div id="detail-content"></div>
+    </div>
+  </div>
+  <div class="detail-overlay" id="detail-overlay"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

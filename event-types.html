@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-deleGATE — Event Types</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="event-types.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">e-deleGATE</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item">
+          <span class="nav-icon">📋</span>
+          <span>Event Log</span>
+        </a>
+        <a href="event-types.html" class="nav-item active">
+          <span class="nav-icon">⚙️</span>
+          <span>Event Types</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="page-header">
+        <h1>Event Types</h1>
+        <p class="page-subtitle">Define event types and configure how their payloads are displayed in the event log.</p>
+      </div>
+
+      <!-- Event type list -->
+      <div class="et-list" id="et-list"></div>
+
+      <!-- Event type detail / editor -->
+      <div class="et-editor-overlay" id="et-editor-overlay"></div>
+      <div class="et-editor" id="et-editor">
+        <div class="et-editor-inner" id="et-editor-inner"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Preview modal -->
+  <div class="preview-overlay" id="preview-overlay"></div>
+  <div class="preview-modal" id="preview-modal">
+    <div class="preview-modal-inner">
+      <div class="preview-header">
+        <h3>List View Preview</h3>
+        <button class="detail-close" id="preview-close">✕</button>
+      </div>
+      <div id="preview-content"></div>
+    </div>
+  </div>
+
+  <script src="event-types.js"></script>
+</body>
+</html>
